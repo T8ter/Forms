@@ -1,27 +1,37 @@
-function popularity(fage,ffollow){
-  return ffollow/fage;
-}
+// function popularity(fage,ffollow){
+//   return ffollow/fage;
+// }
 
 
 
 $(document).ready(function() {
   $("#formOne").submit(function(event) {
-    var nameInput = $("input#name").val();
-    var ageInput = $("input#age").val();
-    var ethnicityInput= $("input#ethnicity").val();
-    var followersInput = $("input#followers").val();
-    var beardInput = $("select#beard").val();
-    var singleInput = $("input#single").val();
-    var pAge = parseInt(ageInput);
-    var pFollowers = parseInt(followersInput);
+    var blanks = ["name", "age", "ethnicity", "followers", "beard", "single"];
+
+    blanks.forEach(function(blank){
+      var userInput = $("input#" + blank).val();
+      $("." + blank).text(userInput);
+    });
 
 
-    $(".name").text(nameInput);
-    $(".age").text(pAge);
-    $(".ethnicity").text(ethnicityInput);
-    $(".followers").text(pFollowers);
-    $(".beard").text(beardInput);
-    $(".single").text(singleInput);
+
+
+    // var nameInput = $("input#name").val();
+    // var ageInput = $("input#age").val();
+    // var ethnicityInput= $("input#ethnicity").val();
+    // var followersInput = $("input#followers").val();
+    // var beardInput = $("select#beard").val();
+    // var singleInput = $("input#single").val();
+    // var pAge = parseInt(ageInput);
+    // var pFollowers = parseInt(followersInput);
+
+
+    // $(".name").text(nameInput);
+    // $(".age").text(pAge);
+    // $(".ethnicity").text(ethnicityInput);
+    // $(".followers").text(pFollowers);
+    // $(".beard").text(beardInput);
+    // $(".single").text(singleInput);
 
     $("#story").show();
     event.preventDefault();
